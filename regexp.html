@@ -25,7 +25,7 @@
 		alert(pattern1.test(num1));
 	}
 //编写一个判断输入的字符串是否有相邻重复单词的正则表达式
-function checkString() {
+        function checkString() {
 	var str=document.getElementsByTagName("input")[1].value;
 	var pattern2=/\b(\w+)\b\s+\b\1\b/gi;
 	alert (pattern2.test(str));
