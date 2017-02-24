@@ -1,13 +1,35 @@
-一 编写一个判断给定数字是否为手机号码的正则表达式
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>正则表达式</title>
+</head>
+<body>
+<input type="text" name="numbers">
+<button onclick="checkPhoneNumber()">验证手机号码</button>
+<input type="text" name="strings">
+<button onclick="checkString()">验证字符串</button>
+<script type="text/javascript">
+//第一次只写了两个正则就丢上来了。。。。看了眼别人的答案感觉自己好单纯
+
+//编写一个判断给定数字是否为手机号码的正则表达式
 //移动：
 //134X(0-8)、135136、137、138、139、150、151、152、157X(0-7\9)(TD)、158、159、182 、183、184、187（3G\4G)、188(3G)147(数据卡）、178（4G）
 //   联通：
 //130、131、132、155、156、185(3G)、186(3G) 、145(数据卡）、176（4G）
 //电信：
 //180(3G)、181(3G)、189(3G)、133、153、（1349卫通） 、177（4G）
-
-^1[38][0-9]\d{8}$|^14[57]\d{8}$|^15[01235689]\d{8}$|^157[012345679]\d{7}$|^17[678]\d{8}$
-
-二 编写一个判断输入的字符串是否有相邻重复单词的正则表达式
-
-\b(\w+)\b\s+\b\1\b
+	function checkPhoneNumber() {
+		var num1=document.getElementsByTagName("input")[0].value;
+		var pattern1=/^1[38][0-9]\d{8}$|^14[57]\d{8}$|^15[01235689]\d{8}$|^157[012345679]\d{7}$|^17[678]\d{8}$/gi;
+		alert(pattern1.test(num1));
+	}
+//编写一个判断输入的字符串是否有相邻重复单词的正则表达式
+function checkString() {
+	var str=document.getElementsByTagName("input")[1].value;
+	var pattern2=/\b(\w+)\b\s+\b\1\b/gi;
+	alert (pattern2.test(str));
+}
+</script>
+</body>
+</html>
