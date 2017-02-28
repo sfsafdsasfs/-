@@ -34,14 +34,14 @@
  * 返回一个数组，格式见函数中示例
  */
 function getData() {
-var list1=document.getElementById("source").getElementsByTagName("li");
+  var list1=document.getElementById("source").getElementsByTagName("li");
   var data=[],
       newArray;
-for(var i=0;i<list1.length;i++){
+  for(var i=0;i<list1.length;i++){
   newArray=[]; newArray.push(list1[i].firstChild.nodeValue.slice(0,2));
-newArray.push(list1[i].getElementsByTagName("b")[0].firstChild.nodeValue);
-data.push(newArray);
-}
+  newArray.push(list1[i].getElementsByTagName("b")[0].firstChild.nodeValue);
+  data.push(newArray);
+  }
   return data;
 }
 
@@ -50,9 +50,11 @@ data.push(newArray);
  * 按空气质量对data进行从小到大的排序
  * 返回一个排序后的数组
  */
+ //比较函数
  function compare(value1,value2){
   return value1[1]-value2[1];
 }
+ //排序
 function sortAqiData(data) {
 data.sort(compare);
   return data;
@@ -65,12 +67,12 @@ data.sort(compare);
  */
 function render(data) {
   var newList=document.getElementById("resort");
-data.forEach(function(item,index,array){
- var newListNode=document.createElement("li");
+  data.forEach(function(item,index,array){
+  var newListNode=document.createElement("li");
   newListNode.innerHTML=item[0]+"空气质量："+"<b>"+item[1]+"</b>";
   newList.appendChild(newListNode);
   newListNode=null;
-})
+ })
 }
 
 function btnHandle() {
@@ -82,7 +84,7 @@ function btnHandle() {
 function init() {
 
   // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-var btn=document.getElementById("sort-btn");
+  var btn=document.getElementById("sort-btn");
   btn.addEventListener("click",btnHandle,false);
 }
 
