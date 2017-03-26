@@ -49,3 +49,25 @@ rightOut.onclick=function(){
     list.removeChild(lastOne);
   }
 };
+sortBtn.onclick=function(){
+  var liNode=list.children;
+  var lith=liNode.length;
+  var i=0;
+  var j=lith-1;
+  var box;
+  var timer=setInterval(function(){
+    if(i>=lith-1){
+      clearInterval(timer);
+    }
+    if(j==i){
+      j=lith-1;
+      i++;
+    }
+    if(liNode[j].offsetHeight < liNode[j-1].offsetHeight){
+      box=liNode[j].style.height;
+      liNode[j].style.height=liNode[j-1].style.height;
+      liNode[j-1].style.height=box;    
+    }
+    j--;
+  },20);
+};
