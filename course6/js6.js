@@ -8,7 +8,7 @@ var inquire=document.getElementById("inquire");
 var inquireText=document.getElementById("inquire-text");
 leftIn.onclick=function(){
 if(newText.value){
-  var inputWord=newText.value.split(/[\s,，、]+/);
+  var inputWord=newText.value.split(/[\s,，、\n]+/);
  var newChild;
   for(var i=0;i<inputWord.length;i++){
  newChild=document.createElement("li");
@@ -24,7 +24,7 @@ if(newText.value){
 };
 rightIn.onclick=function(){
 if(newText.value){
-    var inputWord=newText.value.split(/[\s,，、]+/);
+    var inputWord=newText.value.split(/[\s,，、\n]+/);
  var newChild;
   for(var i=0;i<inputWord.length;i++){
     newChild=document.createElement("li");
