@@ -50,6 +50,7 @@ inquire.onclick=function(){
   var liNodes=list.children;
   var a;
   for(var i=0;i<liNodes.length;i++){
+    liNodes[i].style.backgroundColor="red";
    a=liNodes[i].innerText;
     if(a.indexOf(text)!=-1){
       liNodes[i].style.backgroundColor="black";
